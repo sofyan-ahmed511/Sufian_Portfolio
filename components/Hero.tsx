@@ -26,13 +26,13 @@ export default function Hero() {
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-
-      {/* Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+      
+      {/* Glowing Orbs - Optimized with radial gradients instead of heavy blur filters */}
+      <div className="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15)_0%,transparent_70%)] mix-blend-screen pointer-events-none animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.15)_0%,transparent_70%)] mix-blend-screen pointer-events-none" />
 
       {/* Left Vertical Text */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -49,7 +49,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Right Vertical Text */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -60,7 +60,7 @@ export default function Hero() {
       </motion.div>
 
       <div className="w-full px-6 md:px-24 relative z-10 flex flex-col items-center justify-center text-center mt-10">
-
+        
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,51 +103,51 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 md:mt-16 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6"
         >
-          {/* Left: Scroll to explore */}
-          <div className="flex items-center justify-center gap-2 text-white/50 text-xs uppercase tracking-widest order-3 md:order-1 w-full md:w-auto mt-4 md:mt-0">
-            <span>Scroll to explore</span>
-            <motion.div
-              animate={{ x: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-10 h-[1px] bg-gradient-to-r from-white/50 to-transparent ml-2"
-            />
-          </div>
+           {/* Left: Scroll to explore */}
+           <div className="flex items-center justify-center gap-2 text-white/50 text-xs uppercase tracking-widest order-3 md:order-1 w-full md:w-auto mt-4 md:mt-0">
+             <span>Scroll to explore</span>
+             <motion.div
+               animate={{ x: [0, 10, 0] }}
+               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+               className="w-10 h-[1px] bg-gradient-to-r from-white/50 to-transparent ml-2"
+             />
+           </div>
 
-          {/* Middle: Links */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 order-1 md:order-2 w-full md:w-auto">
-            <Link
-              href="/projects"
-              className="group relative flex items-center justify-center gap-2 sm:gap-4 px-8 py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] overflow-hidden w-full sm:w-auto"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="relative z-10 whitespace-nowrap">Explore My Work</span>
-              <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform" size={20} />
-            </Link>
+           {/* Middle: Links */}
+           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 order-1 md:order-2 w-full md:w-auto">
+             <Link
+               href="/projects"
+               className="group relative flex items-center justify-center gap-2 sm:gap-4 px-8 py-4 rounded-full bg-white text-black font-bold text-sm sm:text-base hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] overflow-hidden w-full sm:w-auto"
+             >
+               <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
+               <span className="relative z-10 whitespace-nowrap">Explore My Work</span>
+               <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform" size={20} />
+             </Link>
+             
+             <div className="flex items-center justify-center gap-4 w-full sm:w-auto">
+               {[
+                 { icon: Github, href: '#' },
+                 { icon: Linkedin, href: '#' },
+                 { icon: Twitter, href: '#' }
+               ].map((social, i) => (
+                 <a key={i} href={social.href} className="p-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:scale-110 transition-all text-white/70 hover:text-white backdrop-blur-md flex-1 sm:flex-none flex justify-center">
+                   <social.icon size={20} />
+                 </a>
+               ))}
+             </div>
+           </div>
 
-            <div className="flex items-center justify-center gap-4 w-full sm:w-auto">
-              {[
-                { icon: Github, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Twitter, href: '#' }
-              ].map((social, i) => (
-                <a key={i} href={social.href} className="p-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:scale-110 transition-all text-white/70 hover:text-white backdrop-blur-md flex-1 sm:flex-none flex justify-center">
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Stats */}
-          <div className="flex flex-row sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 order-2 md:order-3 w-full md:w-auto">
-            <div className="flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-2xl px-6 py-3 w-full sm:w-auto md:bg-transparent md:border-none md:p-0">
-              <p className="text-2xl lg:text-3xl font-display font-bold text-white">3+</p>
-              <p className="text-[10px] sm:text-xs text-white/50 uppercase tracking-widest mt-1 md:mt-0">Years Exp.</p>
-            </div>
-            <div className="flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-2xl px-6 py-3 w-full sm:w-auto md:bg-transparent md:border-none md:p-0">
-              <p className="text-2xl lg:text-3xl font-display font-bold text-white">50+</p>
-              <p className="text-[10px] sm:text-xs text-white/50 uppercase tracking-widest mt-1 md:mt-0">Projects</p>
-            </div>
-          </div>
+           {/* Right: Stats */}
+           <div className="flex flex-row sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12 order-2 md:order-3 w-full md:w-auto">
+             <div className="flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-2xl px-6 py-3 w-full sm:w-auto md:bg-transparent md:border-none md:p-0">
+               <p className="text-2xl lg:text-3xl font-display font-bold text-white">3+</p>
+               <p className="text-[10px] sm:text-xs text-white/50 uppercase tracking-widest mt-1 md:mt-0">Years Exp.</p>
+             </div>
+             <div className="flex flex-col items-center justify-center bg-white/5 border border-white/10 rounded-2xl px-6 py-3 w-full sm:w-auto md:bg-transparent md:border-none md:p-0">
+               <p className="text-2xl lg:text-3xl font-display font-bold text-white">50+</p>
+               <p className="text-[10px] sm:text-xs text-white/50 uppercase tracking-widest mt-1 md:mt-0">Projects</p>
+             </div>
+           </div>
         </motion.div>
 
       </div>
