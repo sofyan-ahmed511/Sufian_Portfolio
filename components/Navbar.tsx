@@ -92,26 +92,34 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
-            animate={{ opacity: 1, clipPath: 'circle(150% at 100% 0)' }}
-            exit={{ opacity: 0, clipPath: 'circle(0% at 100% 0)' }}
-            transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] bg-[#050505] flex flex-col justify-center items-center md:hidden h-[100dvh] w-screen"
           >
             {/* Background Decoration */}
             <div className="absolute top-1/4 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="flex flex-col items-center gap-8 relative z-10">
+            <div className="flex flex-col items-center gap-8 relative z-10 w-full px-6">
+              {/* Close Button inside menu for better UX */}
+              <button
+                className="absolute top-6 right-6 text-white p-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <X size={32} />
+              </button>
+
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href;
                 return (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ delay: 0.1 + i * 0.1, duration: 0.4, ease: "easeOut" }}
                   >
                     <Link
                       href={link.href}
@@ -127,13 +135,13 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: 0.2 + navLinks.length * 0.1, duration: 0.5 }}
+                transition={{ delay: 0.1 + navLinks.length * 0.1, duration: 0.4, ease: "easeOut" }}
                 className="mt-8"
               >
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-8 py-4 rounded-full bg-white text-black text-xl font-bold hover:bg-gray-200 transition-colors"
+                  className="px-8 py-4 rounded-full bg-white text-black text-xl font-bold hover:bg-gray-200 transition-colors inline-block"
                 >
                   Let&apos;s Talk
                 </Link>
