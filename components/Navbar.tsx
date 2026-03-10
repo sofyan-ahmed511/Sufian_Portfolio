@@ -103,14 +103,6 @@ export default function Navbar() {
             <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="flex flex-col items-center gap-8 relative z-10 w-full px-6">
-              {/* Close Button inside menu for better UX */}
-              <button
-                className="absolute top-6 right-6 text-white p-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <X size={32} />
-              </button>
-
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href;
                 return (
