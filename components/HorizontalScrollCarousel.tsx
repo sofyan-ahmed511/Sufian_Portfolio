@@ -97,6 +97,7 @@ export default function HorizontalScrollCarousel() {
                 src={work.img}
                 alt={work.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />

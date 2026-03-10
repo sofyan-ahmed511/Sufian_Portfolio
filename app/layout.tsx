@@ -17,6 +17,34 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Sufian Ahmed | Front-End Developer',
   description: 'Portfolio of Sufian Ahmed, Front-End Developer with 3 years of experience in React, Next.js, and Tailwind CSS.',
+  keywords: ['Front-End Developer', 'React Developer', 'Next.js', 'Tailwind CSS', 'Web Development', 'Portfolio', 'Sufian Ahmed'],
+  authors: [{ name: 'Sufian Ahmed' }],
+  creator: 'Sufian Ahmed',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://sufianahmed.com',
+    title: 'Sufian Ahmed | Front-End Developer',
+    description: 'Portfolio of Sufian Ahmed, Front-End Developer with 3 years of experience in React, Next.js, and Tailwind CSS.',
+    siteName: 'Sufian Ahmed Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sufian Ahmed | Front-End Developer',
+    description: 'Portfolio of Sufian Ahmed, Front-End Developer with 3 years of experience in React, Next.js, and Tailwind CSS.',
+    creator: '@sufianahmed',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

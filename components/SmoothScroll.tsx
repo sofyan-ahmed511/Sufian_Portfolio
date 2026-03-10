@@ -11,17 +11,22 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
+      // Disable smooth scrolling on touch devices for better performance
+      // Native touch scrolling is hardware accelerated and feels better
+      syncTouch: false,
     });
+
+    let rafId: number;
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

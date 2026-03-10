@@ -62,7 +62,15 @@ export default function ProjectsPage() {
                   className="w-full lg:w-1/2 aspect-[16/10] relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
                   style={{ perspective: 1000 }}
                 >
-                  <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" referrerPolicy="no-referrer" />
+                  <Image 
+                    src={project.img} 
+                    alt={project.title} 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={i === 0}
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105" 
+                    referrerPolicy="no-referrer" 
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </motion.div>
                 
