@@ -14,6 +14,11 @@ const projects = [
   { title: 'Lumina Portfolio', category: 'Creative Website', img: 'https://picsum.photos/seed/lumina/1200/800', year: '2022', desc: 'Award-winning portfolio site featuring WebGL animations, smooth scrolling, and an immersive user journey.' },
   { title: 'Orbit Real Estate', category: 'Web Application', img: 'https://picsum.photos/seed/orbit/1200/800', year: '2022', desc: 'Property listing platform with interactive maps, advanced filtering, and virtual tours.' },
   { title: 'Zenith Fitness', category: 'Mobile-First Web App', img: 'https://picsum.photos/seed/zenith/1200/800', year: '2021', desc: 'Workout tracking application optimized for mobile devices with offline support and push notifications.' },
+  { title: 'Crypto Wallet', category: 'Fintech App', img: 'https://picsum.photos/seed/crypto/1200/800', year: '2024', desc: 'Decentralized asset management platform with real-time market data and secure transactions.' },
+  { title: 'Health Tracker', category: 'Mobile App', img: 'https://picsum.photos/seed/health/1200/800', year: '2024', desc: 'Monitor vitals, set fitness goals, and track daily activities with an intuitive interface.' },
+  { title: 'Travel Booking', category: 'Web Platform', img: 'https://picsum.photos/seed/travel/1200/800', year: '2023', desc: 'Seamless flight and hotel reservations with AI-powered itinerary suggestions.' },
+  { title: 'EdTech Platform', category: 'E-Learning', img: 'https://picsum.photos/seed/edtech/1200/800', year: '2023', desc: 'Interactive learning experiences with video streaming, quizzes, and progress tracking.' },
+  { title: 'Smart Home Hub', category: 'IoT Dashboard', img: 'https://picsum.photos/seed/smarthome/1200/800', year: '2022', desc: 'Centralized control panel for smart home devices with automation rules and energy monitoring.' },
 ];
 
 const processSteps = [
