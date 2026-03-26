@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[12vw] md:text-[9vw] lg:text-[7vw] font-display font-bold tracking-tighter leading-none text-white w-full flex flex-col items-center justify-center gap-2 md:gap-1"
+          className="text-[12vw] md:text-[9vw] lg:text-[7vw] font-display font-bold tracking-tighter leading-none text-white w-full flex flex-col items-center justify-center gap-2 md:gap-4 mt-4 mb-2"
         >
           <span>CRAFTING</span>
           <div className="h-[14vw] md:h-[10vw] lg:h-[8vw] overflow-hidden relative w-full max-w-[800px] text-center flex items-center justify-center">
