@@ -4,19 +4,25 @@ import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
 
+interface Project {
+  title: string;
+  category: string;
+  img: string;
+  year: string;
+  desc: string;
+  liveUrl: string;     // ← أضفناه
+  repoUrl: string;     // ← أضفناه
+}
+
 interface ProjectModalProps {
   isOpen: boolean;
   onClose: () => void;
-  project: {
-    title: string;
-    category: string;
-    img: string;
-    year: string;
-    desc: string;
-  } | null;
+  project: Project | null;
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  if (!project) return null;
+
   return (
     <AnimatePresence>
       {isOpen && project && (
@@ -35,25 +41,60 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             className="bg-[#0a0a0a] border border-white/10 rounded-3xl w-full max-w-5xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* صورة المشروع */}
             <div className="w-full md:w-1/2 aspect-video md:aspect-auto relative">
-              <Image src={project.img} alt={project.title} fill className="object-cover" referrerPolicy="no-referrer" />
+              <Image 
+                src={project.img} 
+                alt={project.title} 
+                fill 
+                className="object-cover" 
+                referrerPolicy="no-referrer" 
+              />
             </div>
+
+            {/* محتوى المشروع */}
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative">
-              <button onClick={onClose} className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+              <button 
+                onClick={onClose} 
+                className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+              >
                 <X size={24} />
               </button>
               
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-mono uppercase tracking-widest">{project.category}</span>
+                <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-mono uppercase tracking-widest">
+                  {project.category}
+                </span>
                 <span className="text-white/40 font-mono">{project.year}</span>
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">{project.title}</h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8">{project.desc}</p>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                {project.title}
+              </h2>
               
-              <div className="flex gap-4 mt-auto">
-                <a href="#" className="px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Live Site</a>
-                <a href="#" className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-semibold hover:bg-white/10 transition-colors">Source Code</a>
+              <p className="text-white/60 text-lg leading-relaxed mb-10">
+                {project.desc}
+              </p>
+
+              {/* الأزرار المعدلة */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
+                <a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors text-center flex-1"
+                >
+                  Live Site
+                </a>
+                
+                <a 
+                  href={project.repoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-full bg-white/5 border border-white/10 font-semibold hover:bg-white/10 transition-colors text-center flex-1"
+                >
+                  Source Code
+                </a>
               </div>
             </div>
           </motion.div>

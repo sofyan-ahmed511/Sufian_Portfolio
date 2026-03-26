@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,27 +10,135 @@ import { PenTool, Layers, Code, Rocket } from 'lucide-react';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 const projects = [
-  { title: 'Aura E-Commerce', category: 'Fullstack Platform', img: 'https://picsum.photos/seed/aura/1200/800', year: '2023', desc: 'A comprehensive digital solution focusing on seamless user experience, robust architecture, and stunning visual design. Built with Next.js, Stripe, and Tailwind CSS.' },
-  { title: 'Nexus Dashboard', category: 'SaaS Application', img: 'https://picsum.photos/seed/nexus/1200/800', year: '2023', desc: 'Real-time analytics dashboard with complex data visualization, user management, and customizable widgets. Built with React and D3.js.' },
-  { title: 'Lumina Portfolio', category: 'Creative Website', img: 'https://picsum.photos/seed/lumina/1200/800', year: '2022', desc: 'Award-winning portfolio site featuring WebGL animations, smooth scrolling, and an immersive user journey.' },
-  { title: 'Orbit Real Estate', category: 'Web Application', img: 'https://picsum.photos/seed/orbit/1200/800', year: '2022', desc: 'Property listing platform with interactive maps, advanced filtering, and virtual tours.' },
-  { title: 'Zenith Fitness', category: 'Mobile-First Web App', img: 'https://picsum.photos/seed/zenith/1200/800', year: '2021', desc: 'Workout tracking application optimized for mobile devices with offline support and push notifications.' },
-  { title: 'Crypto Wallet', category: 'Fintech App', img: 'https://picsum.photos/seed/crypto/1200/800', year: '2024', desc: 'Decentralized asset management platform with real-time market data and secure transactions.' },
-  { title: 'Health Tracker', category: 'Mobile App', img: 'https://picsum.photos/seed/health/1200/800', year: '2024', desc: 'Monitor vitals, set fitness goals, and track daily activities with an intuitive interface.' },
-  { title: 'Travel Booking', category: 'Web Platform', img: 'https://picsum.photos/seed/travel/1200/800', year: '2023', desc: 'Seamless flight and hotel reservations with AI-powered itinerary suggestions.' },
-  { title: 'EdTech Platform', category: 'E-Learning', img: 'https://picsum.photos/seed/edtech/1200/800', year: '2023', desc: 'Interactive learning experiences with video streaming, quizzes, and progress tracking.' },
-  { title: 'Smart Home Hub', category: 'IoT Dashboard', img: 'https://picsum.photos/seed/smarthome/1200/800', year: '2022', desc: 'Centralized control panel for smart home devices with automation rules and energy monitoring.' },
+  {
+    title: 'Fortnite x Power Rangers',
+    category: 'Web App',
+    img: 'https://i.ibb.co/mVHNcVLH/eenshot.jpg',
+    year: '2023',
+    desc: 'A high-energy gaming landing page featuring immersive 3D character showcases and dynamic background animations.',
+    liveUrl: 'https://eclipse-1-25ur.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/FORTINTE_DON.git',
+  },
+  {
+    title: 'Sofyan Store',
+    category: 'Web App',
+    img: 'https://i.ibb.co/F4ZSsFRM/img-2.jpg',
+    year: '2023',
+    desc: 'A modern e-commerce dashboard featuring trending products, cart management, and a clean Arabic UI layout.',
+    liveUrl: 'https://new-store-hlew.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/sofyan-amazon.git',
+  },
+  {
+    title: 'Luma Interiors',
+    category: 'Design',
+    img: 'https://i.ibb.co/5WFV3jbb/Sharereenshot.jpg',
+    year: '2023',
+    desc: 'Luxury furniture showcase with elegant typography and smooth parallax scrolling effects for interior design.',
+    liveUrl: 'https://vase-shop-1ap5.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/NIKE-DIGITAL-EDITION.git',
+  },
+  {
+    title: 'Nebula Market',
+    category: 'Web App',
+    img: 'https://i.ibb.co/ns131nR4/Shared-Screnshot.jpg',
+    year: '2023',
+    desc: 'A dark-themed digital marketplace with vibrant purple nebula aesthetics and glassmorphism UI elements.',
+    liveUrl: 'https://e-shopper-virtual-store-fdns.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/e-shopper---Virtual-Store-.git',
+  },
+  {
+    title: 'DevXpert Portfolio',
+    category: 'Design',
+    img: 'https://i.ibb.co/MyJw1r8Q/Shared-Screenshot.jpg',
+    year: '2023',
+    desc: 'A developer personal brand site featuring a 3D green cube hero section and dark mode aesthetic.',
+    liveUrl: 'https://vase-shop-ikx7.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/Vase_shop.git',
+  },
+  {
+    title: 'DevAlpha Agency',
+    category: 'Web App',
+    img: 'https://i.ibb.co/sd3RnpZz/Shared-Scrshot.jpg',
+    year: '2023',
+    desc: 'Corporate agency website "Code the Tomorrow" with clean white/green gradients and floating particle networks.',
+    liveUrl: 'https://e-commerce-api-uci3.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/e-commerce-2.git',
+  },
+  {
+    title: 'SOFYAN Identity',
+    category: 'Design',
+    img: 'https://i.ibb.co/Y7t6VMtC/prtfol-img.jpg',
+    year: '2023',
+    desc: 'A minimalist bold typography showcase focusing on brand identity and editorial layout design.',
+    liveUrl: 'https://portfolio-qdrb.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/Portfolio.git',
+  },
+  {
+    title: 'Plant Life',
+    category: 'Web App',
+    img: 'https://i.ibb.co/2YcgpCc6/img-3.jpg',
+    year: '2023',
+    desc: 'An eco-friendly e-commerce shop for house plants with clean white space and green accents.',
+    liveUrl: 'https://accessories-gallery-wheat.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/Accessories-gallery.git',
+  },
+  {
+    title: 'E-Shopper Fashion',
+    category: 'Web App',
+    img: 'https://i.ibb.co/p61tSZcv/nshot.jpg',
+    year: '2023',
+    desc: 'Fashion retail landing page highlighting "Express Yourself" trending items with bold product photography.',
+    liveUrl: 'https://the-second-store.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/The-second-store.git',
+  },
+  {
+    title: 'Apple Premium',
+    category: 'Mobile',
+    img: 'https://i.ibb.co/Tx6yV00D/Sharecreenshot.jpg',
+    year: '2023',
+    desc: 'High-fidelity product landing page for Apple wearables, featuring dark mode and neon accent glows.',
+    liveUrl: 'https://dev-alpha-7-rt54.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/DevAlpha-7.git',
+  },
 ];
 
 const processSteps = [
-  { icon: PenTool, title: "1. Discovery & Design", desc: "Understanding the problem, defining user personas, and creating wireframes and high-fidelity prototypes." },
-  { icon: Layers, title: "2. Architecture", desc: "Selecting the right tech stack, designing the database schema, and planning the component structure." },
-  { icon: Code, title: "3. Development", desc: "Writing clean, scalable code with a focus on performance, accessibility, and pixel-perfect implementation." },
-  { icon: Rocket, title: "4. Deployment", desc: "Rigorous testing, CI/CD pipeline setup, and deploying the application to production environments." }
+  { 
+    icon: PenTool, 
+    title: "1. Discovery & Design", 
+    desc: "Understanding the problem, defining user personas, and creating wireframes and high-fidelity prototypes." 
+  },
+  { 
+    icon: Layers, 
+    title: "2. Architecture", 
+    desc: "Selecting the right tech stack, designing the database schema, and planning the component structure." 
+  },
+  { 
+    icon: Code, 
+    title: "3. Development", 
+    desc: "Writing clean, scalable code with a focus on performance, accessibility, and pixel-perfect implementation." 
+  },
+  { 
+    icon: Rocket, 
+    title: "4. Deployment", 
+    desc: "Rigorous testing, CI/CD pipeline setup, and deploying the application to production environments." 
+  }
 ];
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openProject = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // تأخير بسيط عشان الـ animation يخلص
+    setTimeout(() => setSelectedProject(null), 300);
+  };
 
   return (
     <main className="bg-[#050505] text-white selection:bg-blue-500/30 selection:text-blue-200 overflow-hidden">
@@ -52,7 +161,7 @@ export default function ProjectsPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center group cursor-pointer ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
-                onClick={() => setSelectedProject(project)}
+                onClick={() => openProject(project)}   // ← التعديل هنا
               >
                 <motion.div 
                   variants={{
@@ -136,7 +245,12 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <ProjectModal isOpen={!!selectedProject} onClose={() => setSelectedProject(null)} project={selectedProject} />
+      {/* Project Modal - التعديل المهم هنا */}
+      <ProjectModal 
+        isOpen={isModalOpen} 
+        onClose={closeModal} 
+        project={selectedProject} 
+      />
       
       <Footer />
     </main>

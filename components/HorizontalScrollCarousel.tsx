@@ -6,16 +6,56 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const allProjects = [
-  { title: 'E-Commerce', img: 'https://picsum.photos/seed/ecom/800/600', desc: 'A high-performance storefront.' },
-  { title: 'Fintech App', img: 'https://picsum.photos/seed/fin/800/600', desc: 'Secure and scalable financial dashboard.' },
-  { title: 'AI Dashboard', img: 'https://picsum.photos/seed/ai/800/600', desc: 'Real-time data visualization.' },
-  { title: 'Social Platform', img: 'https://picsum.photos/seed/soc/800/600', desc: 'Connecting millions globally.' },
-  { title: 'SaaS Tool', img: 'https://picsum.photos/seed/saas/800/600', desc: 'Streamlining business workflows.' },
-  { title: 'Crypto Wallet', img: 'https://picsum.photos/seed/crypto/800/600', desc: 'Decentralized asset management.' },
-  { title: 'Health Tracker', img: 'https://picsum.photos/seed/health/800/600', desc: 'Monitor vitals and fitness goals.' },
-  { title: 'Travel Booking', img: 'https://picsum.photos/seed/travel/800/600', desc: 'Seamless flight and hotel reservations.' },
-  { title: 'EdTech Platform', img: 'https://picsum.photos/seed/edtech/800/600', desc: 'Interactive learning experiences.' },
-  { title: 'Real Estate App', img: 'https://picsum.photos/seed/realestate/800/600', desc: 'Find your dream home with ease.' },
+  {
+    title: 'Fortnite x Power Rangers',
+    img: 'https://i.ibb.co/mVHNcVLH/eenshot.jpg',
+    desc: 'A high-energy gaming landing page featuring immersive 3D character showcases and dynamic background animations.',
+  },
+  {
+    title: 'Sofyan Store',
+    img: 'https://i.ibb.co/F4ZSsFRM/img-2.jpg',
+    desc: 'A modern e-commerce dashboard featuring trending products, cart management, and a clean Arabic UI layout.',
+  },
+  {
+    title: 'Luma Interiors',
+    img: 'https://i.ibb.co/5WFV3jbb/Sharereenshot.jpg',
+    desc: 'Luxury furniture showcase with elegant typography and smooth parallax scrolling effects for interior design.',
+  },
+  {
+    title: 'Nebula Market',
+    img: 'https://i.ibb.co/ns131nR4/Shared-Screnshot.jpg',
+    desc: 'A dark-themed digital marketplace with vibrant purple nebula aesthetics and glassmorphism UI elements.',
+  },
+  {
+    title: 'DevXpert Portfolio',
+    img: 'https://i.ibb.co/MyJw1r8Q/Shared-Screenshot.jpg',
+    desc: 'A developer personal brand site featuring a 3D green cube hero section and dark mode aesthetic.',
+  },
+  {
+    title: 'DevAlpha Agency',
+    img: 'https://i.ibb.co/sd3RnpZz/Shared-Scrshot.jpg',
+    desc: 'Corporate agency website "Code the Tomorrow" with clean white/green gradients and floating particle networks.',
+  },
+  {
+    title: 'SOFYAN Identity',
+    img: 'https://i.ibb.co/Y7t6VMtC/prtfol-img.jpg',
+    desc: 'A minimalist bold typography showcase focusing on brand identity and editorial layout design.',
+  },
+  {
+    title: 'Plant Life',
+    img: 'https://i.ibb.co/2YcgpCc6/img-3.jpg',
+    desc: 'An eco-friendly e-commerce shop for house plants with clean white space and green accents.',
+  },
+  {
+    title: 'E-Shopper Fashion',
+    img: 'https://i.ibb.co/p61tSZcv/nshot.jpg',
+    desc: 'Fashion retail landing page highlighting "Express Yourself" trending items with bold product photography.',
+  },
+  {
+    title: 'Apple Premium',
+    img: 'https://i.ibb.co/Tx6yV00D/Sharecreenshot.jpg',
+    desc: 'High-fidelity product landing page for Apple wearables, featuring dark mode and neon accent glows.',
+  },
 ];
 
 export default function HorizontalScrollCarousel() {
