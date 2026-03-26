@@ -17,13 +17,13 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-white/50 hover:text-white transition-colors">
+          <a href="https://github.com/sofyan-ahmed511" className="text-white/50 hover:text-white transition-colors">
             <Github size={20} />
           </a>
-          <a href="#" className="text-white/50 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/sofyan-ahmed-20404b279/" className="text-white/50 hover:text-white transition-colors">
             <Linkedin size={20} />
           </a>
-          <a href="#" className="text-white/50 hover:text-white transition-colors">
+          <a href="https://www.instagram.com/sofyan_a_hmed?igsh=MXcwZWZrdWJ2M3I1Yg==" className="text-white/50 hover:text-white transition-colors">
             <Twitter size={20} />
           </a>
         </div>

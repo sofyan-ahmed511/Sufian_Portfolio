@@ -126,9 +126,9 @@ export default function Hero() {
 
             <div className="flex items-center justify-center gap-4 w-full sm:w-auto">
               {[
-                { icon: Github, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Twitter, href: '#' }
+                { icon: Github, href: 'https://github.com/sofyan-ahmed511' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/sofyan-ahmed-20404b279/' },
+                { icon: Twitter, href: 'https://www.instagram.com/sofyan_a_hmed?igsh=MXcwZWZrdWJ2M3I1Yg==' }
               ].map((social, i) => (
                 <a key={i} href={social.href} className="p-4 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:scale-110 transition-all text-white/70 hover:text-white backdrop-blur-md flex-1 sm:flex-none flex justify-center">
                   <social.icon size={20} />
