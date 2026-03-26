@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           {/* Content that slides over the Hero */}
-          <div className="relative z-10 bg-[#0a0a0a] rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] border-t border-white/10">
+          <div className="relative z-10 bg-[#0a0a0a] rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.5)] border-t mt-12 border-white/10">
             <Marquee text="Creative Developer — UI/UX Engineer — Frontend Specialist" />
             
             {/* The Programmer's Strength Section */}
