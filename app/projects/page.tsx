@@ -11,6 +11,15 @@ import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 const projects = [
   {
+    title: 'Dr. Hayan Portfolio',
+    category: 'Web App',
+    img: 'https://i.postimg.cc/rs6D1P3M/Shared-Screenshot.jpg',
+    year: '2026',
+    desc: 'This was my first freelance project, and it was a large and comprehensive one. I designed and developed a complete professional portfolio website for Dr. Hayan, a specialist in cosmetic dentistry and dental treatments.',
+    liveUrl: 'https://dr-hayan-syria.vercel.app/',
+    repoUrl: 'https://github.com/sofyan-ahmed511/DR.HAYAN.git',
+  },
+  {
     title: 'Fortnite x Power Rangers',
     category: 'Web App',
     img: 'https://i.ibb.co/mVHNcVLH/eenshot.jpg',

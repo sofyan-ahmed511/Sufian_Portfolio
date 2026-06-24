@@ -10,8 +10,8 @@ interface Project {
   img: string;
   year: string;
   desc: string;
-  liveUrl: string;     // ← أضفناه
-  repoUrl: string;     // ← أضفناه
+  liveUrl: string;     
+  repoUrl: string;    
 }
 
 interface ProjectModalProps {
